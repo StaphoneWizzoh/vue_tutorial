@@ -47,4 +47,8 @@ _Computed_: It is an object defined within a component that has as keys variable
 
 _$emit()_: Allows one to emit events that other components are alble to listen to. Its takes two arguments; type of event being emitted and the value of the argument being passed through.
 
-`v-model` also listens for an update in the subsequent child prop for the particular value. It automatically updates the associated value if a change occur.,
+`v-model` also listens for an update in the subsequent child prop for the particular value. It automatically updates the associated value if a change occur.
+
+## Loops
+
+It uses a for-in loop through the directive `v-for`. It also requires a unique `key` prop.
