@@ -54,15 +54,18 @@
         template: `
             <form @submit.prevent="handleSubmit">
                 <h3>{{this.title}}</h3>
-                <input type="email" v-model="email"/>
-                <input type="password" v-model="password"/>
+                <custom-input :label="emailLabel"  v-model="email"/>
+                <custom-input :label="passwordLabel" v-model="password"/>
                 <button>Login</button>
             </form>
         `,
+        components: ['custom-input'],
         data() {
             return {
                 title: "Login Form",
+                emailLabel: "Email",
                 email: "Input your email",
+                passwordLabel: "Password",
                 password: ""
             }
         },
@@ -73,6 +76,28 @@
             }
         }
     })
+
+    app.component('custom-input', {
+        template: `
+            <label>
+                {{label}}
+                <input type="text" v-model="inputValue">
+            </label>
+        `,
+        props: ["label", "modelValue"],
+        computed: {
+            inputValue: {
+                get() {
+                    return this.modelValue
+                },
+                set(value) {
+                    console.log(value)
+                    this.$emit('update:modelValue', value)
+                }
+            }
+        },
+    })
+
     app.mount('#app')
 </script>
 
