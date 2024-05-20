@@ -20,3 +20,11 @@ Accessing custom variables within the methods, the `this` kkeyword is used as Vu
 There are also event modifiers in Vue js. For example `@click.prevent` or `@keyup.enter`
 
 `v-on`: specific directive used for events. Short-hand is `@` symbol and then the event name e.g. `@.click`
+
+## Vue components
+
+Has the same structure as the default template.
+
+Must be defined before the mounting of the app.
+
+Data defined within a custom component can only be used within its template.

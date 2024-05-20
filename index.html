@@ -15,14 +15,18 @@
         [v-cloak] {
             display: none;
         }
+
+        input {
+            margin: 10px 0;
+            display: block;
+        }
     </style>
 </head>
 
 <body>
     <div id="app" v-cloak>
-        <h1>Hello, {{ greeting }}</h1>
-        <input @keyup.enter="greeting(greeting)" v-model="greeting" type="text">
-        <br><br>
+        <h1>Vue Js Tutorial</h1>
+        <login-form />
         <button @click.prevent="toggleBox">Toggle Box</button><br>
         <div v-if="isVisible" class="box">Box 1</div>
     </div>
@@ -43,6 +47,29 @@
             },
             greet(message) {
                 console.log(message)
+            }
+        }
+    })
+    app.component('login-form', {
+        template: `
+            <form @submit.prevent="handleSubmit">
+                <h3>{{this.title}}</h3>
+                <input type="email" v-model="email"/>
+                <input type="password" v-model="password"/>
+                <button>Login</button>
+            </form>
+        `,
+        data() {
+            return {
+                title: "Login Form",
+                email: "Input your email",
+                password: ""
+            }
+        },
+        methods: {
+            handleSubmit() {
+                console.log("Your Email:", this.email)
+                console.log("Your Password:", this.password)
             }
         }
     })
