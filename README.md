@@ -49,6 +49,3 @@ _$emit()_: Allows one to emit events that other components are alble to listen t
 
 `v-model` also listens for an update in the subsequent child prop for the particular value. It automatically updates the associated value if a change occur.
 
-## Loops
-
-It uses a for-in loop through the directive `v-for`. It also requires a unique `key` prop.
