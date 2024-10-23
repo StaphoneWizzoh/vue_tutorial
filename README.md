@@ -52,3 +52,5 @@ _$emit()_: Allows one to emit events that other components are alble to listen t
 ## Loops
 
 It uses a for-in loop through the directive `v-for`. It also requires a unique `key` prop.
+
+## Others
